@@ -45,6 +45,8 @@ void Mesh::InitUserMeshData(ParameterInput *pin) {
     threshold = pin->GetReal("problem","thr");
   }
 
+  // This enables you to adopt user-defined switching function.
+  // The default function is void DefaultDualEnergySwitchingFunc in dual_en.cpp.
   EnrollUserDualEnergySwitchingFunction(MyDualEnSwitchingFunc);
   return;
 }
